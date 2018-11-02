@@ -4,10 +4,8 @@ config_version: 3
 name: $SERVICE_ID.endpoints.$PROJECT_ID.cloud.goog
 title: $SERVICE_ID.apis.devision.io
 apis:
-- name: devision.example.{{cookiecutter.api_version}}.CurrencyRate
-- name: devision.example.{{cookiecutter.api_version}}.User
-- name: devision.example.v2.CurrencyRate
-- name: devision.example.v2.User
+- name: devision.{{cookiecutter.project_name.lower()}}.{{cookiecutter.api_version}}.CurrencyRate
+- name: devision.{{cookiecutter.project_name.lower()}}.{{cookiecutter.api_version}}.User
 
 documentation:
   summary: |-
@@ -23,14 +21,12 @@ authentication:
   - id: google_service_account
     issuer: "token-issuer.devision.io"
     audiences: "apis.devision.io"
-    jwks_uri: "https://www.googleapis.com/service_accounts/{{cookiecutter.api_version}}/jwk/token-issuer@devision-io.iam.gserviceaccount.com"
+    jwks_uri: "https://www.googleapis.com/service_accounts/v1/jwk/token-issuer@devision-io.iam.gserviceaccount.com"
   rules:
   - selector: "*"
     requirements:
       - provider_id: google_service_account
   - selector: "devision.example.{{cookiecutter.api_version}}.User.GetMe" # Method without authenticate
-    allow_without_credential: true
-  - selector: "devision.example.v2.User.GetMe" # Method without authenticate
     allow_without_credential: true
 
 
