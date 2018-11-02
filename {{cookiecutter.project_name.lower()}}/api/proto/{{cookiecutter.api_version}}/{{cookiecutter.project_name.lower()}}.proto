@@ -11,4 +11,4 @@ option java_outer_classname = "{{cookiecutter.project_name}}Proto";
 option java_package = "io.devision.{{cookiecutter.project_name.lower()}}.{{cookiecutter.api_version}}";
 option php_namespace = "Devision\\{{cookiecutter.project_name}}\\{{cookiecutter.api_version.upper()}}";
 
-
+// See example: https://github.com/devision-io/API-Example-GRPC-Python/blob/master/api/proto/v1/example.proto
