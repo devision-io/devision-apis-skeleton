@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package devision.{{cookiecutter.project_name}}.{{cookiecutter.api_version}};
+package devision.{{cookiecutter.project_name.lower()}}.{{cookiecutter.api_version}};
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
